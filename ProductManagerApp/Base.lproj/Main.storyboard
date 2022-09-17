@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="230-Ie-3qM">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--アイテムリスト-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ItemListViewController" customModule="ProductManagerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qj-XJ-ayD">
+                                <rect key="frame" x="45" y="101" width="300" height="80"/>
+                                <color key="backgroundColor" red="0.69723172060000005" green="0.80987197160000002" blue="0.55535920309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HmA-9d-cid"/>
+                                    <constraint firstAttribute="width" constant="300" id="df8-dS-IYW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="飲料">
+                                    <fontDescription key="titleFontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="54"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="hkN-U1-ViP" kind="show" id="2KG-JS-gGs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="5Qj-XJ-ayD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="7Wj-jJ-UVJ"/>
+                            <constraint firstItem="5Qj-XJ-ayD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZZz-Um-6yI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="アイテムリスト" id="jsR-x4-LqW"/>
+                    <connections>
+                        <outlet property="drinkButton" destination="5Qj-XJ-ayD" id="b46-4m-Dhd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="-370"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="8KD-i2-kZD">
+            <objects>
+                <viewController id="hkN-U1-ViP" customClass="DetailViewController" customModule="ProductManagerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sDW-dd-eFj">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mob-DO-942">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="209" id="WOr-tz-ZaS" customClass="ItemListCell" customModule="ProductManagerApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="209"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WOr-tz-ZaS" id="PpI-2M-2r4">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="209"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メーカ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-9q-oe3">
+                                                    <rect key="frame" x="25" y="11" width="100" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="MEM-De-9O4"/>
+                                                        <constraint firstAttribute="height" constant="45" id="Pu8-Qq-TfJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfN-MX-tTM">
+                                                    <rect key="frame" x="25" y="56" width="100" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="aS3-MD-3SA"/>
+                                                        <constraint firstAttribute="height" constant="45" id="u5t-Fl-XO7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="容量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqz-na-err">
+                                                    <rect key="frame" x="265" y="11" width="100" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="EJy-bf-Pcq"/>
+                                                        <constraint firstAttribute="height" constant="50" id="P9C-oa-PsO"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Shf-LA-00r"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="xKL-UR-Aub"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qfi-5k-4FZ">
+                                                    <rect key="frame" x="285" y="61" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="f3a-01-Jgd"/>
+                                                        <constraint firstAttribute="width" constant="60" id="msN-xa-QA2"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.39930076019999999" green="0.80987197160000002" blue="0.73390864440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="Aqz-na-err" firstAttribute="leading" secondItem="QfN-MX-tTM" secondAttribute="trailing" constant="140" id="6Ov-Wa-7Ds"/>
+                                                <constraint firstItem="2cK-9q-oe3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PpI-2M-2r4" secondAttribute="leadingMargin" id="Bgg-xO-apG"/>
+                                                <constraint firstItem="Aqz-na-err" firstAttribute="top" secondItem="PpI-2M-2r4" secondAttribute="topMargin" id="CP3-j9-ORb"/>
+                                                <constraint firstItem="QfN-MX-tTM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PpI-2M-2r4" secondAttribute="leadingMargin" id="CXT-eZ-Rbg"/>
+                                                <constraint firstItem="2cK-9q-oe3" firstAttribute="top" secondItem="PpI-2M-2r4" secondAttribute="topMargin" id="Rwq-mJ-pHp"/>
+                                                <constraint firstItem="QfN-MX-tTM" firstAttribute="top" secondItem="2cK-9q-oe3" secondAttribute="bottom" id="SWW-sE-GMF"/>
+                                                <constraint firstItem="qfi-5k-4FZ" firstAttribute="top" secondItem="Aqz-na-err" secondAttribute="bottom" id="Sby-yT-RIX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Aqz-na-err" secondAttribute="trailing" constant="5" id="jDJ-rX-xHO"/>
+                                                <constraint firstAttribute="trailing" secondItem="qfi-5k-4FZ" secondAttribute="trailing" constant="45" id="nRj-Eb-uMq"/>
+                                                <constraint firstItem="QfN-MX-tTM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2cK-9q-oe3" secondAttribute="leading" id="xm8-aN-QBY"/>
+                                                <constraint firstItem="Aqz-na-err" firstAttribute="leading" secondItem="2cK-9q-oe3" secondAttribute="trailing" constant="140" id="y3R-Nx-SXK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="capacityLabel" destination="Aqz-na-err" id="rID-jT-8hg"/>
+                                            <outlet property="janImage" destination="qfi-5k-4FZ" id="Q5a-2X-ecv"/>
+                                            <outlet property="makerLabel" destination="2cK-9q-oe3" id="U5F-kD-1u0"/>
+                                            <outlet property="productLabel" destination="QfN-MX-tTM" id="8hb-fL-SQn"/>
+                                            <segue destination="8RU-fN-l9g" kind="show" identifier="showDetailSegue" id="tbG-9P-CWv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rlz-tV-BHG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mob-DO-942" firstAttribute="top" secondItem="Rlz-tV-BHG" secondAttribute="top" id="MQ7-qd-32K"/>
+                            <constraint firstItem="Rlz-tV-BHG" firstAttribute="trailing" secondItem="mob-DO-942" secondAttribute="trailing" id="cF2-v2-2qR"/>
+                            <constraint firstItem="mob-DO-942" firstAttribute="leading" secondItem="Rlz-tV-BHG" secondAttribute="leading" id="ltc-Pn-dpM"/>
+                            <constraint firstItem="Rlz-tV-BHG" firstAttribute="bottom" secondItem="mob-DO-942" secondAttribute="bottom" id="s3X-fZ-u3l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SZd-c8-CxB"/>
+                    <connections>
+                        <outlet property="detailTbleView" destination="mob-DO-942" id="yVd-QB-lbs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EU8-2l-Cjs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="-369.66824644549763"/>
+        </scene>
+        <!--Jan View Controller-->
+        <scene sceneID="F2o-yN-d4J">
+            <objects>
+                <viewController storyboardIdentifier="JanViewController" id="8RU-fN-l9g" customClass="JanViewController" customModule="ProductManagerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eZu-Z7-J4b">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdA-pb-rc1">
+                                <rect key="frame" x="45" y="310" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zdA-pb-rc1" secondAttribute="height" multiplier="1:1" id="D0M-va-x2l"/>
+                                    <constraint firstAttribute="width" constant="300" id="YWs-qW-nSM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="容量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfW-Rf-UPY">
+                                <rect key="frame" x="60" y="243" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="6qg-MX-NHf"/>
+                                    <constraint firstAttribute="height" constant="60" id="YrY-qi-vlg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メーカー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbP-cH-L77">
+                                <rect key="frame" x="60" y="91" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="4nR-Gt-9Q8"/>
+                                    <constraint firstAttribute="height" constant="60" id="8df-tB-Vvx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAa-D0-Xwc">
+                                <rect key="frame" x="60" y="159" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Dth-tf-3Rd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="egl-9k-uG4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xFS-y1-E3C"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="xFS-y1-E3C" firstAttribute="bottom" secondItem="zdA-pb-rc1" secondAttribute="bottom" constant="200" id="2Io-Xh-iQJ"/>
+                            <constraint firstItem="OAa-D0-Xwc" firstAttribute="top" secondItem="fbP-cH-L77" secondAttribute="bottom" constant="8" id="CHX-XW-uew"/>
+                            <constraint firstItem="OAa-D0-Xwc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xFS-y1-E3C" secondAttribute="leading" id="DMR-mN-LYW"/>
+                            <constraint firstItem="xFS-y1-E3C" firstAttribute="trailing" secondItem="RfW-Rf-UPY" secondAttribute="trailing" constant="210" id="DPu-7p-5jc"/>
+                            <constraint firstItem="fbP-cH-L77" firstAttribute="top" secondItem="xFS-y1-E3C" secondAttribute="top" id="P1A-uC-yOi"/>
+                            <constraint firstItem="zdA-pb-rc1" firstAttribute="centerX" secondItem="eZu-Z7-J4b" secondAttribute="centerX" id="TIl-MM-WHj"/>
+                            <constraint firstItem="xFS-y1-E3C" firstAttribute="trailing" secondItem="fbP-cH-L77" secondAttribute="trailing" constant="210" id="TLM-Ob-BqB"/>
+                            <constraint firstItem="fbP-cH-L77" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xFS-y1-E3C" secondAttribute="leading" id="W0j-u4-EnQ"/>
+                            <constraint firstItem="xFS-y1-E3C" firstAttribute="trailing" secondItem="OAa-D0-Xwc" secondAttribute="trailing" constant="210" id="bPA-QS-5kp"/>
+                            <constraint firstItem="RfW-Rf-UPY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xFS-y1-E3C" secondAttribute="leading" id="bRt-2M-XrP"/>
+                            <constraint firstItem="RfW-Rf-UPY" firstAttribute="top" secondItem="OAa-D0-Xwc" secondAttribute="bottom" constant="24" id="xad-Cn-XFA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kgo-3y-WFJ"/>
+                    <connections>
+                        <outlet property="caplabel" destination="RfW-Rf-UPY" id="dXm-GE-xdr"/>
+                        <outlet property="imageView" destination="zdA-pb-rc1" id="qe0-cc-7Pi"/>
+                        <outlet property="itemLabel" destination="OAa-D0-Xwc" id="ugi-3t-8Ie"/>
+                        <outlet property="makeLabel" destination="fbP-cH-L77" id="P1c-0a-9j3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9li-4w-Ucw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2461.5384615384614" y="-392.41706161137438"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="co9-5z-SdS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="230-Ie-3qM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kvo-JY-UGi">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U23-xy-ece"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnv-KD-5IN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.84615384615384" y="-28.436018957345969"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
